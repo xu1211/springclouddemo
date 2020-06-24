@@ -1,14 +1,20 @@
-#服务注册中心
+# 服务名称
 spring:
   application:
     name: eureka-server
 
+# 服务端口
 server:
   port: 8761
 
+# 配置Eureka Server 信息
 eureka:
+  # 服务实例类配置
   instance:
+    # 当前应用实例的主机名
     hostname: localhost
+
+  # 服务注册类配置
   client:
     # 是否将自己注册到注册中心
     registerWithEureka: false

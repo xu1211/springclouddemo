@@ -11,6 +11,7 @@ import java.util.List;
  * @author xuyuc
  * 服务类:从 Ribbon 客户端 中获取数据
  */
+
 @Service
 public class ProductService {
     @Autowired

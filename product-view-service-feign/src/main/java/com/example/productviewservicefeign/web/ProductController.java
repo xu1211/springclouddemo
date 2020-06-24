@@ -1,7 +1,7 @@
-package com.example.productviewserviceribbon.web;
+package com.example.productviewservicefeign.web;
 
-import com.example.productviewserviceribbon.bean.Product;
-import com.example.productviewserviceribbon.service.ProductService;
+import com.example.productviewservicefeign.bean.Product;
+import com.example.productviewservicefeign.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * @author xuyuc
- * 控制器:把数据给 product.html
+ * @since 2020/6/24 15:38
  */
 @Controller
 public class ProductController {
