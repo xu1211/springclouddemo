@@ -2,9 +2,15 @@
  
 
 - Eureka Server 服务注册中心
-
+    - pom依赖
+    ```xml
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+    ```
     - 配置文件 \
-    `src\main\resources\application.yml`
+    [`src\main\resources\application.yml`](.\src\main\resources\application.yml)
     - 启动类 \
     `src\main\java\com\example\eurekaserver\EurekaServerApplication.java` \
 @EnableEurekaServer 表明自己是一个 Eureka Server

@@ -9,6 +9,8 @@
         <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/product-data-service/pom.xml" />
         <option value="$PROJECT_DIR$/product-view-service-ribbon/pom.xml" />
+        <option value="$PROJECT_DIR$/product-view-service-feign/pom.xml" />
+        <option value="$PROJECT_DIR$/product-view-service-feign-hystrix/pom.xml" />
       </list>
     </option>
   </component>
