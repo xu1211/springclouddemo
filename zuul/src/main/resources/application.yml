@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: product-service-zuul
+
+server:
+  port: 8011
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  routes:
+    # \u4EE5 /api/data/ \u5F00\u5934\u7684\u8BF7\u6C42\u90FD\u8F6C\u53D1\u7ED9 PRODUCT-DATA-SERVICE \u670D\u52A1
+    api-a:
+      path: /api/data/**
+      serviceId: PRODUCT-DATA-SERVICE
+    # \u4EE5 /api/view/ \u5F00\u5934\u7684\u8BF7\u6C42\u90FD\u8F6C\u53D1\u7ED9 PRODUCT-VIEW-SERVICE-FEIGN-HYSTRIX \u670D\u52A1
+    api-b:
+      path: /api/view/**
+      serviceId: PRODUCT-VIEW-SERVICE-FEIGN-HYSTRIX
