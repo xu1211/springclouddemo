@@ -3,13 +3,14 @@
 
 微服务 | 端口
 ---|---
-eureka-server | 8761
-product-data-service | 8001，8002
-product-view-service-ribbon | 8080
-product-view-service-feign | 8081
-product-view-service-feign-hystrix | 8082
-hystrix-dashboard | 8010
-zuul | 8011
+服务注册中心：eureka-server | 8761
+服务提供者：product-data-service | 8001，8002
+服务消费者_ribbon：product-view-service-ribbon | 8080
+服务消费者_feign：product-view-service-feign | 8081
+服务消费者_熔断：product-view-service-feign-hystrix | 8082
+服务消费者_分布式配置：product-view-service-feign-config-client | 8083
+断路器仪表盘 hystrix-dashboard | 8010
+路由 zuul | 8011
 
 
 ## 服务注册中心 Eureka Server
@@ -42,11 +43,17 @@ Feign 是对 Ribbon的封装，使用注解的方式，默认实现了负载均�
   1. 统一访问功能
   2. [服务过滤功能](./zuul/src/main/java/com/example/zuul/filter/LoginFilter.java)
 
+## 分布式配置中心
 
+微服务 中小型项目能达到上百，大型能上千上万
 
+由于服务数量巨多，为了方便服务配置文件 ==统一管理，实时更新== ，所以需要分布式配置中心组件。
 
+分布式配置中心组件有 Spring Cloud Config ， Apoll 等等
 
-
+在 Spring Cloud Config 组件中分两个角色:
+ 1. [Config Server](./config-server/README.md)
+ 2. [Config Client](./product-view-service-feign-config-client/README.md)
 
 
 

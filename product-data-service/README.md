@@ -1,5 +1,6 @@
-# Eureka Server
- 
+# Eureka Client
+    
+   创建一个数据提供服务，并作为Eureka Client注册在Eureka Server
 
 - Eureka Client微服务--服务提供者
     - pom依赖
@@ -19,3 +20,9 @@
 
 
 先启动Eureka Server，再启动这个Eureka Client服务，访问Eureka Server: http://{server:ip}:8761  就能看到这个 Eureka Client
+
+- 服务请求地址
+
+    http://127.0.0.1:8001/products
+    
+    http://127.0.0.1:8002/products

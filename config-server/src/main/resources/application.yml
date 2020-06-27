@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      # git\u4ED3\u5E93\u5206\u652F
+      label: master
+      server:
+        git:
+          # Git \u4ED3\u5E93\u5730\u5740\uFF08GitHub\u3001GitLab\u3001\u7801\u4E91 ...\uFF09
+          uri: https://github.com/xu1211/spring-cloud-config.git
+          # \u8DEF\u5F84\u540D
+          searchPaths: respo
+          username:
+          password:
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
