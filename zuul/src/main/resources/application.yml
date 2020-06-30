@@ -1,22 +1,24 @@
-spring:
-  application:
-    name: product-service-zuul
-
-server:
-  port: 8011
-
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
+spring:
+  application:
+    name: product-service-zuul
+  zipkin:
+    base-url: http://localhost:9411
+
+server:
+  port: 8011
+
 zuul:
   routes:
-    # \u4EE5 /api/data/ \u5F00\u5934\u7684\u8BF7\u6C42\u90FD\u8F6C\u53D1\u7ED9 PRODUCT-DATA-SERVICE \u670D\u52A1
+    # 以 /api/data/ 开头的请求都转发给 PRODUCT-DATA-SERVICE 服务
     api-a:
       path: /api/data/**
       serviceId: PRODUCT-DATA-SERVICE
-    # \u4EE5 /api/view/ \u5F00\u5934\u7684\u8BF7\u6C42\u90FD\u8F6C\u53D1\u7ED9 PRODUCT-VIEW-SERVICE-FEIGN-HYSTRIX \u670D\u52A1
+    # 以 /api/view/ 开头的请求都转发给 PRODUCT-VIEW-SERVICE-FEIGN-HYSTRIX 服务
     api-b:
       path: /api/view/**
       serviceId: PRODUCT-VIEW-SERVICE-FEIGN-HYSTRIX

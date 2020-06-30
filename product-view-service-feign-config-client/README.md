@@ -20,4 +20,10 @@
             - test：表示测试环境
             - prod：表示生产环境
 
-启动项目时会自动从git库里找配置信息启动
+启动项目时会默认加载application.yml，然后从它配置的git库里找配置信息启动
+
+通过 `--spring.profiles.active=环境配置` 命令参数来指定加载哪个yml
+```
+java -jar ***.jar --spring.profiles.active=prod 
+```
+这样启动会加载application-prod.yml

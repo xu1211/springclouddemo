@@ -1,17 +1,16 @@
 spring:
   cloud:
     config:
-      # \u914D\u7F6E\u670D\u52A1\u7AEFuri
+      # 配置服务端uri
       uri: http://localhost:8888
-      # \u914D\u7F6E\u6587\u4EF6\u7684\u540D\u79F0
+      # 配置文件的名称
       name: product-view-service-feign
-      # \u914D\u7F6E\u6587\u4EF6\u7684\u5206\u652F
+      # 配置文件的分支
       label: master
-      # \u914D\u7F6E\u6587\u4EF6\u7684\u73AF\u5883\u6807\u8BC6
+      # 配置文件的环境标识
       profile: dev
-      # profile: prod
       discovery:
-        # \u5F00\u542F\u914D\u7F6E\u4FE1\u606F\u53D1\u73B0
+        # 开启配置信息发现
         enabled:  true
-        # \u6307\u5B9A\u914D\u7F6E\u4E2D\u5FC3\u670D\u52A1\u7AEF\u7684service-id
+        # 指定配置中心服务端的service-id
         serviceId:  config-server
