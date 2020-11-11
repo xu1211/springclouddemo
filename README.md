@@ -1,6 +1,7 @@
-# springcloud
- springcloud-demo
+# springcloud-Netflix
+ Netflix-demo
 
+Netflix用来入门还可以，不过市面上这套框架没什么人用，之后也不维护了
 
 
 ## 服务注册中心 Eureka Server
@@ -55,6 +56,10 @@ ZipKin， Twitter 公司开源，理论模型来自于 Google Dapper 论文。
 
 springcloud2.0之前需要自己搭建一个Zikpin Server服务;2.0之后官方提供了完整的jar包实现这一功能,只要启动运行即可
 
+## 服务监控
+Spring Boot Admin
+监控服务的健康状况，会话数量，并发数，服务资源
+服务端客户端模式
 
 
 ---
