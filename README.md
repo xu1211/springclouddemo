@@ -7,9 +7,14 @@ Netflix用来入门还可以，不过市面上这套框架没什么人用，之�
 ## 服务注册中心 Eureka Server
 - [Eureka Server 服务注册中心](./eureka-server)
 
-http://{server:ip}:8761
-## 服务提供者
+启动后访问 `http://{server:ip}:8761` 可以查看有哪些服务提供者，服务消费者
+
+## 服务提供者 Eureka Client
 - [Eureka Client微服务--服务提供者](./product-data-service)
+  
+启动后 服务提供者 Eureka Client 向 Eureka Server 注册，
+它会提供一些元数据，例如主机和端口，URL，主页等。Eureka Server 从每个 Client 实例接收心跳消息。 如果心跳超时，则通常将该实例从注册 Server 中删除。
+
 
 ## 服务消费者
 在 Spring Cloud 中服务与服务之间可以用 `RestTemplate + Ribbon` 和 `Feign` 来调用
@@ -23,19 +28,27 @@ Ribbon可自动从Eureka Server获取服务提供者地址列表，并基于负�
 1. [Eureka Client微服务--服务消费者 ribbon + restTemplate](./product-view-service-ribbon)
 2. [Eureka Client微服务--服务消费者 Feign](./product-view-service-feign)
 
+启动后在 Eureka 中会注册实例
  
 ## 熔断器 Hystrix
 
- 1. [为服务消费者 Feign 增加熔断](./product-view-service-feign-hystrix)
+ 1. [为服务消费者 Feign 增加熔断功能](./product-view-service-feign-hystrix)
 
 ## 熔断器仪表盘监控 Hystrix Dashboard
 
  1. [微服务--监控熔断情况](./hystrix-dashboard)
 
+启动后访问 `http://localhost:8764/hystrix`
+
+
 ## 路由网关 zuul
 
-  1. [统一访问功能](./zuul/)
-  2. [服务过滤功能](./zuul/src/main/java/com/example/zuul/filter/LoginFilter.java)
+1. [统一访问功能 路由转发](./zuul/src/main/resources/application.yml)
+    1. 以 /api/data/ 开头的请求都转发给 PRODUCT-DATA-SERVICE 服务
+    2. 以 /api/view/ 开头的请求都转发给 PRODUCT-VIEW-SERVICE-FEIGN-HYSTRIX 服务
+2. [服务过滤功能](./zuul/src/main/java/com/example/zuul/filter/LoginFilter.java)
+3. [失败时的回调](./zuul/src/main/java/com/example/zuul/fallbackprovider/WebAdminFeignFallbackProvider.java)
+
 
 ## 分布式配置中心
 
