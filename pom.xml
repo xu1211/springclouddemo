@@ -13,6 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>springclouddemo</name>
     <description>springclouddemo-parent</description>
+    <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

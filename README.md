@@ -5,12 +5,12 @@ Netflix用来入门还可以，不过市面上这套框架没什么人用，之�
 
 
 ## 服务注册中心 Eureka Server
-- [Eureka Server 服务注册中心](./eureka-server)
+- [Eureka Server 服务注册中心](./eureka-server/README.md)
 
 启动后访问 `http://{server:ip}:8761` 可以查看有哪些服务提供者，服务消费者
 
 ## 服务提供者 Eureka Client
-- [Eureka Client微服务--服务提供者](./product-data-service)
+- [Eureka Client微服务--服务提供者](./product-data-service/README.md)
   
 启动后 服务提供者 Eureka Client 向 Eureka Server 注册，
 它会提供一些元数据，例如主机和端口，URL，主页等。Eureka Server 从每个 Client 实例接收心跳消息。 如果心跳超时，则通常将该实例从注册 Server 中删除。
@@ -26,17 +26,19 @@ Ribbon可自动从Eureka Server获取服务提供者地址列表，并基于负�
 >Feign 是对 Ribbon的封装，使用注解的方式，默认实现了负载均衡的效果，调用起来更简单
 
 1. [Eureka Client微服务--服务消费者 ribbon + restTemplate](./product-view-service-ribbon)
-2. [Eureka Client微服务--服务消费者 Feign](./product-view-service-feign)
+2. [Eureka Client微服务--服务消费者 Feign](./product-view-service-feign/README.md)
+   
+
 
 启动后在 Eureka 中会注册实例
  
 ## 熔断器 Hystrix
 
- 1. [为服务消费者 Feign 增加熔断功能](./product-view-service-feign-hystrix)
+ 1. [为服务消费者 Feign 增加熔断功能](./product-view-service-feign-hystrix/README.md)
 
 ## 熔断器仪表盘监控 Hystrix Dashboard
 
- 1. [微服务--监控熔断情况](./hystrix-dashboard)
+ 1. [微服务--监控熔断情况](./hystrix-dashboard/README.md)
 
 启动后访问 `http://localhost:8764/hystrix`
 
@@ -59,8 +61,8 @@ Ribbon可自动从Eureka Server获取服务提供者地址列表，并基于负�
 分布式配置中心组件有 Spring Cloud Config ， Apoll 等等
 
 在 Spring Cloud Config 组件中分两个角色:
- 1. [Config Server](./config-server)
- 2. [Config Client](./product-view-service-feign-config-client)
+ 1. [Config Server](./config-server/README.md)
+ 2. [Config Client](./product-view-service-feign-config-client/README.md)
 
 ## 服务链路追踪
 ZipKin， Twitter 公司开源，理论模型来自于 Google Dapper 论文。
